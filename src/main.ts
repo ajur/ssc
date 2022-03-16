@@ -1,15 +1,16 @@
-import { Application } from 'pixi.js';
-import { sounds } from './Sounds';
+import './hello.ts';
 import './main.css';
-import { preload } from "./preloader";
-import { Scene } from "./simon/interfaces";
-import { SpaceSimon } from './simon/SpaceSimon';
-// just for debugging
-import { withGlobals } from './debug';
+import { Application } from 'pixi.js';
 import { Pane } from 'tweakpane';
+import { assets } from './assets';
+import { preload } from './common/preloader';
+import { sounds } from './common/Sounds';
+import { withGlobals } from './common/debug';
+import { Scene } from './simon/interfaces';
+import { SpaceSimon } from './simon/SpaceSimon';
 
 
-preload({onLoaded, onClicked});
+preload({assets: assets(), onLoaded, onClicked});
 
 function onLoaded() {
     const app = new Application({

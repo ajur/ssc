@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { gsap } from "gsap";
 import { WebfontLoaderPlugin } from "pixi-webfont-loader";
-import { Loader } from 'pixi.js';
-import { assets } from "./assets";
+import { IAddOptions, Loader } from 'pixi.js';
 
 Loader.registerPlugin(WebfontLoaderPlugin);
 
-
 export type PreloaderOptions = {
+    assets: IAddOptions[],
     onLoaded: Loader.OnCompleteSignal,
     onClicked?: () => void,
     onRevealed?: () => void,
@@ -16,7 +15,7 @@ export type PreloaderOptions = {
 }
 
 
-export function preload({onLoaded, onClicked, onRevealed, revealTime = 0.3, logoAnimTime = 1}: PreloaderOptions) {
+export function preload({assets, onLoaded, onClicked, onRevealed, revealTime = 0.3, logoAnimTime = 1}: PreloaderOptions) {
     const preloaderDiv: HTMLDivElement = document.querySelector('#preloader')!;
     const footerDiv: HTMLDivElement = preloaderDiv.querySelector(".preloader-footer")!;
     const logoPath: SVGPathElement = preloaderDiv.querySelector("svg path")!;
@@ -24,6 +23,7 @@ export function preload({onLoaded, onClicked, onRevealed, revealTime = 0.3, logo
     const logoPathLength = logoPath.getTotalLength();
     logoPath.style.strokeDasharray = `${logoPathLength} ${logoPathLength}`;
     logoPath.style.strokeDashoffset = `${logoPathLength}`;
+    logoPath.style.strokeOpacity = '1.0';
     gsap.to(logoPath.style, {duration: logoAnimTime, strokeDashoffset: 0, ease: 'power2.inOut'});
     
     
@@ -54,6 +54,6 @@ export function preload({onLoaded, onClicked, onRevealed, revealTime = 0.3, logo
     loader.onProgress.add(updateProgress);
     loader.onComplete.once(loadingCompleted);
     
-    loader.add(assets());
+    loader.add(assets);
     loader.load();
 }

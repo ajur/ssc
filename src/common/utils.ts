@@ -1,3 +1,4 @@
+import { DisplayObject } from 'pixi.js';
 
 export const math = {
     clamp: (val: number, min: number, max: number): number => val < min ? min : val > max ? max : val
@@ -13,6 +14,10 @@ export const fun = {
     debounce 
 }
 
+export const display = {
+    scaleToFit,
+    scaleDownToFit
+}
 
 function localStorageLoad<Type>(key: string): Type | undefined {
     return localStorageLoadDefault(key, undefined);
@@ -39,4 +44,16 @@ function debounce<P extends unknown[]>(func: DebouncedFunction<P>, waitMS = 300)
             func.apply(this, args);
         }, waitMS);
     }
+}
+
+
+export function scaleToFit(obj: DisplayObject, width: number, height: number): number {
+    const bounds = obj.getLocalBounds();
+    const w = Math.max(1, bounds.width);
+    const h = Math.max(1, bounds.height);
+    return Math.min(width / w, height / h);
+}
+
+export function scaleDownToFit(...params: Parameters<typeof scaleToFit>): number {
+    return Math.min(1, scaleToFit(...params));
 }

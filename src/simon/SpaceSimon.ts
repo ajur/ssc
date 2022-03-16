@@ -2,7 +2,7 @@ import { Container, IDestroyOptions, MIPMAP_MODES, Text, Ticker, TilingSprite } 
 import { StarShip } from "./StarShip";
 import { Scene } from './interfaces';
 import { PopupPanel } from './PopupPanel';
-import { scaleDownToFit } from './utils';
+import { scaleDownToFit } from '../common/utils';
 
 
 export class SpaceSimon extends Container implements Scene {
