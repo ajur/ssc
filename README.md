@@ -14,12 +14,12 @@ And ofcourse, to awesome webdev and gamedev comunities for abundance of free res
 
 ### SpaceSimon
 
-Background:
+Background by [Screaming Brain Studios](https://screamingbrainstudios.com/)
 
-Screaming Brain Studios (https://screamingbrainstudios.com/)
-
-Space ship - base image and uv map - by MillionthVector (http://millionthvector.blogspot.de)
-Coloring done by me in Blender.
+Space ship - base image and uv map - by [MillionthVector](http://millionthvector.blogspot.de)
+With coloring done by me in Blender.
 
 Music:
 Music by <a href="/users/sergequadrado-24990007/?tab=audio&amp;utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=audio&amp;utm_content=14017">SergeQuadrado</a> from <a href="https://pixabay.com/music/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=14017">Pixabay</a>
+
+Fonts found on [fontspace](fontspace.com): Teacher by [Jim Hashiba](https://www.fontspace.com/bridgeco) and Aegris Outline by [Zephram](https://www.fontspace.com/pixel-kitchen)

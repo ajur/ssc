@@ -1,11 +1,11 @@
 import { gsap } from 'gsap';
-import { Container, NineSlicePlane, Text, Texture } from 'pixi.js';
+import { Container, Sprite, Text, Texture } from 'pixi.js';
 
 export class PopupPanel extends Container {
     _panelWidth: number;
     _panelHeight: number;
 
-    bkg: NineSlicePlane;
+    bkg: Sprite;
     msg: Text;
 
     constructor(width: number, height: number, text = "") {
@@ -40,12 +40,12 @@ export class PopupPanel extends Container {
             .set(this, { visible: false });
     }
 
-    private createBackground(width: number, height: number): NineSlicePlane {
-        const bkg = new NineSlicePlane(Texture.from('/simon/glassPanel.png'), 10, 10, 10, 10);
+    private createBackground(width: number, height: number): Sprite {
+        const bkg = Sprite.from(Texture.EMPTY);
         bkg.width = width;
         bkg.height = height;
-        bkg.position.set(-width / 2, -height / 2);
-        bkg.renderable = false;
+        bkg.anchor.set(0.5);
+        // bkg.renderable = false;
         return bkg;
     }
 

@@ -1,4 +1,4 @@
-import { Container, IDestroyOptions, Text, Ticker, TilingSprite } from 'pixi.js';
+import { Container, IDestroyOptions, MIPMAP_MODES, Text, Ticker, TilingSprite } from 'pixi.js';
 import { StarShip } from "./StarShip";
 import { Scene } from './interfaces';
 import { PopupPanel } from './PopupPanel';
@@ -14,7 +14,7 @@ export class SpaceSimon extends Container implements Scene {
     starShip: StarShip;
     txt: Text;
     popup: PopupPanel;
-    title: Text;
+    title: TilingSprite;
 
     constructor(width: number, height: number) {
         super();
@@ -58,18 +58,26 @@ export class SpaceSimon extends Container implements Scene {
     }
 
     createBkg(): TilingSprite {
-        return TilingSprite.from("/simon/background.png", { width: this.width, height: this.height });
+        const spr = TilingSprite.from("simon/background.png", { width: this.width, height: this.height });
+        spr.texture.baseTexture.mipmap = MIPMAP_MODES.OFF;  // fix flickering
+        return spr;
     }
 
-    private createTitle(): Text {
+    private createTitle(): TilingSprite {
         const txt = new Text("SpaceSimon", {
             fill: 0xe7e7e7,
             fontSize: 64,
             padding: 15,
             fontFamily: "TeacherA"
         });
-        txt.anchor.set(0.5);
-        return txt;
+        txt.anchor.set(0.5, 0);
+
+        const spr = TilingSprite.from("simon/titleBackgrund.png", {width: txt.width, height: txt.height});
+        spr.texture.baseTexture.mipmap = MIPMAP_MODES.OFF;  // fix flickering
+        spr.anchor.set(0.5, 0);
+        spr.mask = spr.addChild(txt);
+
+        return spr;
     }
 
     infoText() {
@@ -89,12 +97,17 @@ export class SpaceSimon extends Container implements Scene {
 
         const W95 = width * 0.95;
         const H95 = height * 0.95;
+        const W75 = width * 0.75;
 
         this.starShip.position.set(width / 2, height / 2);
         this.starShip.scale.set(scaleDownToFit(this.starShip, W95, H95));
 
-        this.title.anchor.set(0.5, 0);
         this.title.position.set(width / 2, 10);
+        this.title.scale.set(scaleDownToFit(this.title, W75, H95));
+        if (height < width) {
+            this.title.scale.set(this.title.scale.x * 0.7);
+            this.title.position.x = this.title.width / 2;
+        }
 
         this.popup.position.set(width / 2, height / 2);
         this.popup.scale.set(scaleDownToFit(this.popup, W95, H95));
@@ -107,6 +120,7 @@ export class SpaceSimon extends Container implements Scene {
 
     moveBackground() {
         this.bkg.tilePosition.y = (this.bkg.tilePosition.y + 0.1) % this.bkg.texture.height;
+        this.title.tilePosition.y = (this.title.tilePosition.y + 0.1) % this.title.texture.height;
     }
 
     destroy(options?: boolean | IDestroyOptions): void {

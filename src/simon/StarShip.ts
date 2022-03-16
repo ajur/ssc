@@ -30,12 +30,12 @@ const randWrongHitMsg = () => WRONG_HIT[wrongHitRng()];
 
 
 const SECTIONS = [
-    {img: '/simon/ss_lights_0_yellow.png', note: 'note-0'},
-    {img: '/simon/ss_lights_1_green.png', note: 'note-1'},
-    {img: '/simon/ss_lights_2_cyan.png', note: 'note-2'},
-    {img: '/simon/ss_lights_3_blue.png', note: 'note-3'},
-    {img: '/simon/ss_lights_4_purple.png', note: 'note-4'},
-    {img: '/simon/ss_lights_5_red.png', note: 'note-5'},
+    {img: 'simon/ss_lights_0_yellow.png', note: 'note-0'},
+    {img: 'simon/ss_lights_1_green.png', note: 'note-1'},
+    {img: 'simon/ss_lights_2_cyan.png', note: 'note-2'},
+    {img: 'simon/ss_lights_3_blue.png', note: 'note-3'},
+    {img: 'simon/ss_lights_4_purple.png', note: 'note-4'},
+    {img: 'simon/ss_lights_5_red.png', note: 'note-5'},
 ];
 
 
@@ -53,7 +53,7 @@ export class StarShip extends Container {
     constructor() {
         super();
 
-        const bkg = this.baseSprite = Sprite.from('/simon/ss_lights_base.png');
+        const bkg = this.baseSprite = Sprite.from('simon/ss_lights_base.png');
         bkg.anchor.set(0.5);
         this.addChild(bkg);
 

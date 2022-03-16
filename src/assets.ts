@@ -16,7 +16,6 @@ const simonNotesSprite: SoundSpriteDataMap = {
 
 export function assets(): IAddOptions[] {
     return [
-        // { url: 'https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap' },
         { url: "/simon/TeacherA.ttf", name: "TeacherA"},
         { url: "/simon/AegrisOutlineRegular.ttf", name: "AegisOutlet"},
         { url: "/simon/simon.json" },
