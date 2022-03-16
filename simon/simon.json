@@ -1,231 +1,84 @@
+{"frames": {
+
+"simon/background.png":
 {
-  "frames": {
-    "/simon/ss_lights_0_yellow.png": {
-      "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_1_green.png": {
-      "frame": {
-        "x": 1,
-        "y": 920,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/glassPanel.png": {
-      "frame": {
-        "x": 1,
-        "y": 1839,
-        "w": 100,
-        "h": 100
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 100,
-        "h": 100
-      },
-      "sourceSize": {
-        "w": 100,
-        "h": 100
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_2_cyan.png": {
-      "frame": {
-        "x": 921,
-        "y": 1,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_3_blue.png": {
-      "frame": {
-        "x": 921,
-        "y": 920,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_4_purple.png": {
-      "frame": {
-        "x": 1841,
-        "y": 1,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_5_red.png": {
-      "frame": {
-        "x": 1841,
-        "y": 920,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/ss_lights_base.png": {
-      "frame": {
-        "x": 2761,
-        "y": 1,
-        "w": 918,
-        "h": 917
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 10,
-        "y": 10,
-        "w": 918,
-        "h": 917
-      },
-      "sourceSize": {
-        "w": 938,
-        "h": 937
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "/simon/background.png": {
-      "frame": {
-        "x": 2761,
-        "y": 920,
-        "w": 512,
-        "h": 512
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 512,
-        "h": 512
-      },
-      "sourceSize": {
-        "w": 512,
-        "h": 512
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    }
-  },
-  "meta": {
-    "app": "http://free-tex-packer.com",
-    "version": "0.6.7",
-    "image": "simon.png",
-    "format": "RGBA8888",
-    "size": {
-      "w": 4096,
-      "h": 2048
-    },
-    "scale": 1
-  }
+	"frame": {"x":2,"y":2,"w":512,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":512},
+	"sourceSize": {"w":512,"h":512}
+},
+"simon/ss_lights_0_yellow.png":
+{
+	"frame": {"x":1030,"y":2,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_1_green.png":
+{
+	"frame": {"x":2,"y":923,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_2_cyan.png":
+{
+	"frame": {"x":924,"y":923,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_3_blue.png":
+{
+	"frame": {"x":2,"y":1844,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_4_purple.png":
+{
+	"frame": {"x":924,"y":1844,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_5_red.png":
+{
+	"frame": {"x":2,"y":2765,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/ss_lights_base.png":
+{
+	"frame": {"x":924,"y":2765,"w":920,"h":919},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":9,"w":920,"h":919},
+	"sourceSize": {"w":938,"h":937}
+},
+"simon/titleBackgrund.png":
+{
+	"frame": {"x":516,"y":2,"w":512,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":512},
+	"sourceSize": {"w":512,"h":512}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "simon.webp",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":4096},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ec92c4627ea995b1b50017c7c9ae7c75:2432f62a655bce0b051eeb024e8a5203:7f4b70b241431215e4317a24d2210f40$"
+}
 }
