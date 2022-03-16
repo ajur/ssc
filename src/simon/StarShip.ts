@@ -116,6 +116,9 @@ export class StarShip extends Container {
         tl.call(() => {
             this.tappedSequence = [];
             this.interactive = true;
+            this.nextLevelTimeout = setTimeout(() => {
+                this.gameOver("Don't wait so long. Repeat whole pattern.");
+            }, 5000);
         });
     }
 
@@ -133,6 +136,8 @@ export class StarShip extends Container {
     }
 
     private checkSeqClick(idx: number): void {
+        clearTimeout(this.nextLevelTimeout);
+
         if (this.tappedSequence.length >= this.sequence.length) {
             this.gameOver(randTooMuchMsg());
             return;
@@ -149,8 +154,12 @@ export class StarShip extends Container {
         if (this.tappedSequence.length == this.sequence.length) {
             this.nextLevelTimeout = setTimeout(() => {
                 this.okSound(); 
-                this.nextLevel()
+                this.nextLevel();
             }, 1000);
+        } else {
+            this.nextLevelTimeout = setTimeout(() => {
+                this.gameOver("Don't wait so long. Repeat whole pattern.");
+            }, 5000);
         }
     }
 

@@ -31,7 +31,7 @@ export class SpaceSimon extends Container implements Scene {
 
         this.title = this.addChild(this.createTitle());
 
-        this.popup = this.addChild(new PopupPanel(400, 400, "Welcome!\nClick to start new game."));
+        this.popup = this.addChild(new PopupPanel(400, 400, "Welcome!\n\nClick to start new game."));
 
         this.popup.on('pointertap', this.newGame, this);
         this.starShip.on('set_msg', this.logMsg, this);
@@ -43,7 +43,6 @@ export class SpaceSimon extends Container implements Scene {
     }
 
     newGame() {
-        console.log('new game!');
         this.popup.hide();
         this.starShip.newGame();
     }
