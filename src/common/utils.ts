@@ -1,4 +1,4 @@
-import { DisplayObject } from 'pixi.js';
+import { Container, DisplayObject, Graphics, GraphicsGeometry } from 'pixi.js';
 
 export const math = {
     clamp: (val: number, min: number, max: number): number => val < min ? min : val > max ? max : val
@@ -16,8 +16,11 @@ export const fun = {
 
 export const display = {
     scaleToFit,
-    scaleDownToFit
+    scaleDownToFit,
+    showWireframe,
+    hideWireframe
 }
+
 
 function localStorageLoad<Type>(key: string): Type | undefined {
     return localStorageLoadDefault(key, undefined);
@@ -56,4 +59,36 @@ export function scaleToFit(obj: DisplayObject, width: number, height: number): n
 
 export function scaleDownToFit(...params: Parameters<typeof scaleToFit>): number {
     return Math.min(1, scaleToFit(...params));
+}
+
+
+const _wireframe: Graphics = (()=>{
+    const g = new Graphics();
+    g.lineStyle(1, 0xffffff, 1, 0, true);
+    g.moveTo(0,0);
+    g.lineTo(1,0);
+    g.lineTo(1,1);
+    g.lineTo(0,1);
+    g.lineTo(0,0);
+    g.lineTo(1,1);
+    return g;
+})();
+function showWireframe(obj: Container): void {
+    const g = _wireframe.clone();
+    const {x, y, width, height} = obj.getLocalBounds();
+    g.position.set(x, y);
+    g.width = width;
+    g.height = height;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const anyObj = obj as any;
+    anyObj._wireframe = obj.addChild(g);
+}
+function hideWireframe(obj: Container): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const anyObj = obj as any;
+    if (anyObj._wireframe) {
+        const g = anyObj._wireframe as Graphics
+        g.destroy();
+        delete anyObj._wireframe;
+    }
 }

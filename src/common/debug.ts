@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import * as PIXI from 'pixi.js';
 import * as SOUND from '@pixi/sound';
 import { Pane } from 'tweakpane';
+import * as UTILS from './utils';
 
 
 export function withGlobals(app: PIXI.Application, menu: Pane) {
@@ -22,6 +23,9 @@ export function withGlobals(app: PIXI.Application, menu: Pane) {
     console.log('- gsap - wiggle wiggle')
     global.gsap = gsap;
     
+    console.log('- UTILS - random stuff')
+    global.UTILS = UTILS;
+
     console.log('- APP - like the whole game scene and stuff')
     global.APP = app;
     console.log('- MENU - tweakpane, until I replace it with something custom')
